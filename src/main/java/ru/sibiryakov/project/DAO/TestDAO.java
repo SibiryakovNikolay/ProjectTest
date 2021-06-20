@@ -5,5 +5,7 @@ import ru.sibiryakov.project.model.Names;
 import java.util.List;
 
 public interface TestDAO {
-    public List <Names> getAllNames();
+     List <Names> getAllNames();
+
+
 }

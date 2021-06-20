@@ -4,11 +4,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import ru.sibiryakov.project.model.Names;
 
 import java.util.List;
 @Repository
 public class TestDAOImpl implements TestDAO {
+
     private final SessionFactory sessionFactory;
     @Autowired
     public TestDAOImpl(SessionFactory sessionFactory) {
@@ -22,4 +24,6 @@ public class TestDAOImpl implements TestDAO {
                 session.createQuery("from Names", Names.class).getResultList();
         return list;
     }
+
+
 }

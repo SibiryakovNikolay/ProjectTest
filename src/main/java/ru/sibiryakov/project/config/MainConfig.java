@@ -1,6 +1,7 @@
 package ru.sibiryakov.project.config;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +14,12 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
+
+
 @Configuration
 @ComponentScan("ru.sibiryakov.project")
 @EnableWebMvc
+
 public class MainConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
@@ -47,6 +51,5 @@ public class MainConfig implements WebMvcConfigurer {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
-    }
 
-}
+}}

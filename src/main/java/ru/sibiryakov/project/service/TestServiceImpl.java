@@ -23,4 +23,7 @@ public class TestServiceImpl implements TestService {
     public List<Names> getAllNames() {
         return testDAO.getAllNames();
     }
+
+
+
 }
