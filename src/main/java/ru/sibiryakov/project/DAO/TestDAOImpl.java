@@ -25,5 +25,12 @@ public class TestDAOImpl implements TestDAO {
         return list;
     }
 
+    @Override
+    public void saveName(Names name) {
+            Session session = sessionFactory.getCurrentSession();
+            session.saveOrUpdate(name);
+        }
+    }
 
-}
+
+

@@ -24,6 +24,11 @@ public class TestServiceImpl implements TestService {
         return testDAO.getAllNames();
     }
 
+    @Override
+    @Transactional
+    public void saveName(Names name) {
+       testDAO.saveName(name);
+    }
 
 
 }

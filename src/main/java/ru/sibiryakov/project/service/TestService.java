@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface TestService {
     List<Names> getAllNames();
+    void saveName(Names name);
 
 }
