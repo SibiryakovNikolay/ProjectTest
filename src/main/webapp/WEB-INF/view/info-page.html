@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+<body>
+<h1>Информация о бумаге</h1>
+
+<br/>
+<br/>
+<br/>
+
+    <form th:action="@{/delete/{id}(id=${info.id})}">
+    <input type="submit" value="Удалить"/>
+
+        <br/>
+        <br/>
+
+        <p th:text="${info.getId()}">info</p>
+        <p th:text="${info.getSecId()}">info</p>
+        <p th:text="${info.getRegNumber()}">info</p>
+        <p th:text="${info.getName()}">info</p>
+        <p th:text="${info.getEmitentTitle()}">info</p>
+
+        <br/>
+        <br/>
+
+        <h2>История бумаги</h2>
+
+        <br/>
+        <br/>
+
+        <div th:switch="${history}">
+            <h2 th:case="null">Not found!</h2>
+            <div th:case="*">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>SECID</th>
+                        <th>Trade Date</th>
+                        <th>Number Trades</th>
+                        <th>Open</th>
+                        <th>Close</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="his : ${history}">
+                        <td th:text="${his.secId}"></td>
+                        <td th:text="${his.tradeDate}"></td>
+                        <td th:text="${his.numTrades}"></td>
+                        <td th:text="${his.open}"></td>
+                        <td th:text="${his.close}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+</body>
+</html>

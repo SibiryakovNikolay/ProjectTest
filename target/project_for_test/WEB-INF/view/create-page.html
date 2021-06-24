@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<header>
+    <h1>Добавляем акцию</h1>
+</header>
+<div>
+    <form th:method="POST" th:action="@{/}" th:object="${formCreate}">
+        <label for="id">Идентификатор</label>
+        <input type="text" th:field="*{id}" id="id" placeholder="enter"/>
+        <br/>
+        <label for="secId">Аббревиатура</label>
+        <input type="text" th:field="*{secId}" id="secId" placeholder="enter"/>
+        <br/>
+        <label for="regNum">Рег номер</label>
+        <input type="text" th:field="*{regNumber}" id="regNum" placeholder="enter"/>
+        <br/>
+        <label for="name">Имя</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="enter"/>
+        <br/>
+        <label for="emitent">Эмитент</label>
+        <input type="text" th:field="*{emitentTitle}" id="emitent" placeholder="enter"/>
+        <br/>
+        <input type="submit" value="Создать"/>
+        <br/>
+        <input type="reset" value="Очистить"/>
+        <br>
+        <input type="button" value="Назад"
+               onclick="window.location.href='/'"/>
+    </form>
+
+</div>
+</body>
+</html>

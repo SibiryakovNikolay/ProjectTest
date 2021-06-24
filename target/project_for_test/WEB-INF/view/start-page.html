@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Edit</title>
+    <title>Main</title>
 </head>
 <body>
-<h1>Hello new Project</h1>
-<div th:switch="${allNames}">
-    <h2 th:case="null">No users found!</h2>
+<h1>Информация</h1>
+<span>выберите файл для импорта</span>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="file"/><br/>
+    <input type="submit" value="Импорт"/>
+</form>
+<br/>
+<br/>
+<input type="button" value="Создать бумагу"
+       onclick="window.location.href='/create'"/>
+
+<br/>
+<br/>
+
+<div th:switch="${allSecurities}">
+    <h2 th:case="null">Not found!</h2>
     <div th:case="*">
-        <h2>Users</h2>
+        <h2>Список бумаг</h2>
         <table>
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>ID</th>
+                <th>SECID</th>
+                <th>NAME</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="name : ${allNames}">
-                <td th:text="${name.id}"></td>
-                <td th:text="${name.name}"></td>
+            <tr th:each="security : ${allSecurities}">
+                <td th:text="${security.id}"></td>
+                <td th:text="${security.secId}"></td>
+                <td th:text="${security.name}"></td>
+                <td><a th:href="@{/info/{id}(id=${security.id})}">Информация</a></td>
+                <td><a th:href="@{/update/{id}(id=${security.id})}">Изменить</a></td>
             </tr>
             </tbody>
         </table>

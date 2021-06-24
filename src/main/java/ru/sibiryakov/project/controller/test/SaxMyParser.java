@@ -1,15 +1,14 @@
 package ru.sibiryakov.project.controller.test;
 
 import org.xml.sax.SAXException;
-import ru.sibiryakov.project.model.Names;
-
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 
-public class SaxMyParser {
-    public Names parse(String fileName){
+/* */
+public class SaxMyParser <T> {
+    public T parse(String fileName){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SaxParserHandler handler = new SaxParserHandler();
         SAXParser parser = null;

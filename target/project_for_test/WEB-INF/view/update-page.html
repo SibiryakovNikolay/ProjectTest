@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<h3>Информация</h3>
+
+<div>
+    <form th:method="POST" th:action="@{/update}" th:object="${formUpdate}">
+        <label for="id">Идентификатор</label>
+        <input type="text" th:field="*{id}" id="id" placeholder="enter"/>
+        <br/>
+        <label for="secId">Аббревиатура</label>
+        <input type="text" th:field="*{secId}" id="secId" placeholder="enter"/>
+        <span class="error" th:if="${#fields.hasErrors('secId')}" th:errors="*{secId}">Error</span>
+        <span th:text="${updateError}"></span>
+        <br/>
+        <label for="regNum">Рег номер</label>
+        <input type="text" th:field="*{regNumber}" id="regNum" placeholder="enter"/>
+        <br/>
+        <label for="name">Имя</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="enter"/>
+        <br/>
+        <label for="emitent">Эмитент</label>
+        <input type="text" th:field="*{emitentTitle}" id="emitent" placeholder="enter"/>
+        <br/>
+        <input type="submit" value="Обновить"/>
+        <br/>
+        <input type="reset" value="Очистить"/>
+        <br>
+        <input type="button" value="Назад"
+               onclick="window.location.href='/'"/>
+    </form>
+
+</div>
+
+</form>
+</body>
+</html>
