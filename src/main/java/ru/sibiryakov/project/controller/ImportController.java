@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import ru.sibiryakov.project.controller.test.SaxMyParser;
+import ru.sibiryakov.project.controller.for_sax.SaxMyParser;
 import ru.sibiryakov.project.model.InfoAboutSecurities;
 import ru.sibiryakov.project.model.TradingHistory;
 import ru.sibiryakov.project.service.ProjectService;
@@ -17,7 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import static ru.sibiryakov.project.controller.test.SaxParserHandler.*;
+import static ru.sibiryakov.project.controller.for_sax.SaxParserHandler.*;
 
 /*Controller for import data*/
 

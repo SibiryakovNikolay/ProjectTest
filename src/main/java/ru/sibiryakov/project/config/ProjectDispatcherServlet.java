@@ -1,6 +1,5 @@
 package ru.sibiryakov.project.config;
 
-import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.*;
@@ -36,14 +35,5 @@ public class ProjectDispatcherServlet extends AbstractAnnotationConfigDispatcher
         registration.setMultipartConfig(multipartConfigElement);
 
     }}
-//    @Override
-//    public void onStartup(ServletContext servletContext) throws ServletException {
-//        registerCharacterEncodingFilter(servletContext);
-//    }
-//    private void registerCharacterEncodingFilter(ServletContext servletContext) {
-//        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-//        encodingFilter.setEncoding("UTF-8");
-//        encodingFilter.setForceEncoding(true);
-//        FilterRegistration.Dynamic characterEncodingFilter = servletContext.addFilter("characterEncodingFilter", encodingFilter);
-//        characterEncodingFilter.addMappingForUrlPatterns(null, false, "/*");
+
 

@@ -1,4 +1,4 @@
-package ru.sibiryakov.project.controller.test;
+package ru.sibiryakov.project.controller.for_sax;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;

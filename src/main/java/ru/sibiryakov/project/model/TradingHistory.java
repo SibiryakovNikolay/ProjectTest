@@ -1,7 +1,7 @@
 package ru.sibiryakov.project.model;
 
 import javax.persistence.*;
-import java.util.Objects;
+
 
 @Entity
 @Table(name = "history")
@@ -92,19 +92,5 @@ public class TradingHistory {
         return false;
 
     }
-
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        TradingHistory history = (TradingHistory) o;
-//        return secId.equals(history.secId) &&
-//                tradeDate.equals(history.tradeDate) &&
-//                numTrades.equals(history.numTrades) &&
-//                open.equals(history.open) &&
-//                close.equals(history.close);
-//    }
-
 
 }
